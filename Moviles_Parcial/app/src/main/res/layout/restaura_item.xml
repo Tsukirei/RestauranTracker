@@ -9,6 +9,7 @@
     <androidx.cardview.widget.CardView
     android:layout_width="match_parent"
     android:layout_height="128dp"
+        android:layout_marginTop="@dimen/default_gap"
         android:backgroundTint="#F97B22"
         app:cardCornerRadius="@dimen/big_gap" d>
         <androidx.constraintlayout.widget.ConstraintLayout
