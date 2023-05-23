@@ -7,8 +7,8 @@ android {
     namespace 'com.jchavez.restaurantracker'
     compileSdk 33
 
-    buildFeatures{
-        dataBinding true
+    dataBinding{
+    enable true
     }
 
     defaultConfig {

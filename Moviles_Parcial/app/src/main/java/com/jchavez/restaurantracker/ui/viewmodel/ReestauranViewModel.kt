@@ -19,7 +19,32 @@ class ReestauranViewModel(var repository: RestauranRepository): ViewModel() {
     var Type = MutableLiveData("")
     var status = MutableLiveData("")
 
+
+    var BADATA= "WRONG INFORMATION"
+    var STATIC= ""
+    var CREATED= "RESTAURAN CREATED"
     fun createRestauran(){
+        if(validateData()==true){
+            status.value = BADATA
+            clearData()
+            clearStatus()
+            return
+
+        }
+
+        var restauranReady = RestauranModel(
+            name.value!!,
+            qualification.value!!,
+            Location.value!!,
+            Type.value!!
+
+        )
+
+        addRestauran(restauranReady)
+        status.value = CREATED
+        clearData()
+        clearStatus()
+
 
     }
 
@@ -29,6 +54,20 @@ class ReestauranViewModel(var repository: RestauranRepository): ViewModel() {
         qualification.value = ""
         Location.value = ""
         Type.value = ""
+    }
+
+    fun clearStatus(){
+        status.value= STATIC
+    }
+
+    fun validateData(): Boolean {
+        when{
+           name.value.isNullOrEmpty() -> return true
+            qualification.value.isNullOrEmpty() -> return true
+            Location.value.isNullOrEmpty() -> return true
+            Type.value.isNullOrEmpty() -> return true
+        }
+        return false
     }
 
     fun addRestauran(restauranModel: RestauranModel) = repository.addRestaurants(restauranModel)
@@ -41,6 +80,7 @@ class ReestauranViewModel(var repository: RestauranRepository): ViewModel() {
 
 
             }
+
         }
     }
 }
