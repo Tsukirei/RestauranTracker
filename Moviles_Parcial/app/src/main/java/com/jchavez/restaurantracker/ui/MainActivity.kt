@@ -1,7 +1,8 @@
-package com.jchavez.restaurantracker
+package com.jchavez.restaurantracker.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.jchavez.restaurantracker.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
