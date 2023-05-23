@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="default_gap">16dp</dimen>
+    <dimen name="new_restauran_gap">32sp</dimen>
+    <dimen name="big_gap">32dp</dimen>
+</resources>
